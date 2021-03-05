@@ -1,0 +1,126 @@
+@import "~normalize.css";
+@import "roboto.scss";
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+}
+
+.todo {
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 30px;
+  background: #383838;
+  color: #feb900;
+  .todo__top {
+    height: 40px;
+    border: 2px solid #999999;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    .btn {
+      width: 20%;
+      height: 100%;
+    }
+  }
+  .todo__input {
+    display: inline-block;
+    height: 100%;
+    width: 80%;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  .todo__body {
+    background: #1b1b1b;
+    padding: 5px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+}
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  border: none;
+  background: #1b1b1b;
+  border-radius: 0 3px 3px 0;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+}
+.item {
+  position: relative;
+  background: #474747;
+  border-radius: 3px;
+  margin: 5px 0;
+  padding: 10px 20px 10px 30px;
+  &.active {
+    .item__body {
+      text-decoration: line-through;
+      word-break: break-all;
+    }
+  }
+  .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  .item__label {
+    position: absolute;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #feb900;
+    box-shadow: inset 0 0 4px #000;
+    &::before {
+      display: none;
+      content: "";
+      position: absolute;
+      right: 5px;
+      top: -3px;
+      width: 10px;
+      height: 15px;
+      border-bottom: 3px solid #1b1b1b;
+      border-right: 3px solid #1b1b1b;
+      transform: rotate(30deg);
+    }
+    &.active::before {
+      display: block;
+    }
+  }
+  .item__check {
+    position: absolute;
+    display: none;
+  }
+}
+.close {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: #feb900;
+  color: #000;
+  box-shadow: 0 0 5px #000;
+  font-weight: 700;
+  transition: transform 0.3s;
+  &:hover {
+    transform: rotate(-90deg);
+  }
+}
+
+.draggable {
+  // opacity: 0;
+  // background: #000;
+}
