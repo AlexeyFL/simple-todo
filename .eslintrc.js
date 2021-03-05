@@ -10,6 +10,7 @@ module.exports = {
     "import/prefer-default-export": "off",
     "prefer-const": "off",
     "no-unused-vars": "off",
+    "no-alert": "off",
     "no-param-reassign": "off",
     "import/no-extraneous-dependencies": "off"
   },

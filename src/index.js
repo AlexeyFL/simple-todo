@@ -7,7 +7,6 @@ let items = [];
 function drugNdrop() {
   const dropItems = document.querySelectorAll(".item");
   function dragStart(ev) {
-    console.log(ev);
     ev.target.classList.add("draggable");
     ev.dataTransfer.effectAllowed = "move";
     ev.dataTransfer.setData("Text", ev.target.getAttribute("id"));
@@ -30,7 +29,6 @@ function drugNdrop() {
 
   if (items) {
     dropItems.forEach((dropItem) => {
-      console.log(dropItem);
       dropItem.addEventListener("drag", dragStart);
     });
   }
